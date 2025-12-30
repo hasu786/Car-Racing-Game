@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Racer</title>
+    <link rel="stylesheet" href="assest\css\style.css">
+</head>
+
+<body>
+    <!-- Hidden image elements for preloading -->
+    <div style="display: none;">
+        <img id="playerCarImg" src="assest\image\player-car.png" alt="Player Car">
+        <img id="enemyCar1Img" src="assest\image\car1.png" alt="Enemy Car 1">
+        <img id="enemyCar2Img" src="assest\image\car2.png" alt="Enemy Car 2">
+        <img id="enemyCar3Img" src="assest\image\car3.png" alt="Enemy Car 3">
+        <img id="enemyCar4Img" src="assest\image\car4.png" alt="Enemy Car 4">
+
+        <!-- Explosion effect images -->
+        <img id="explosion1Img" src="assest\image\boom 1.png" alt="Explosion 1">
+        <img id="explosion2Img" src="assest\image\boom 2.png" alt="Explosion 2">
+        <img id="explosion3Img" src="assest\image\boom 3.png" alt="Explosion 3">
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="crashSound" preload="auto">
+        <source src="assest\sound\Car Crash Sound Effect (Free).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="explosionSound" preload="auto">
+        <source src="assest\sound\Big Explosion Sound Effect.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameOverSound" preload="auto">
+        <source src="assest\sound\Game Over - TMKOC Sound Effect.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="boostSound" preload="auto">
+        <source src="assest\sound\DxD - Boost sound effect (with DL).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="speedUpSound" preload="auto">
+        <source src="assest\sound\SPEED SOUND EFFECT [Qmqfl0L6VBM].mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+        <div class="game-ui">
+            <div class="score">Score: <span id="scoreValue">0</span></div>
+            <div class="lives">Lives: <span id="livesValue">3</span> <span class="car-icon">🚗</span></div>
+            <div class="game-speed">Speed: <span id="speedValue">1</span>x</div>
+            <div class="sound-control">
+                <button id="soundToggle">🔊</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            Use <strong>LEFT</strong> and <strong>RIGHT</strong> arrow keys to move • Press <strong>SPACE</strong> to
+            boost
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <h1>SPEED RACER</h1>
+            <p>Dodge incoming traffic and score as many points as you can!</p>
+            <p>Every 900 points increases the game speed.</p>
+            <p>Use your boost (SPACE) wisely - it recharges over time!</p>
+            <button id="startButton">START RACE</button>
+        </div>
+
+        <div class="game-over-screen" id="gameOverScreen">
+            <h2>GAME OVER</h2>
+            <p>Your final score: <span id="finalScore">0</span></p>
+            <p id="highScoreMessage">New high score! 🏆</p>
+            <button id="restartButton">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="assest\js\index.js"></script>
+</body>
+
+</html>
